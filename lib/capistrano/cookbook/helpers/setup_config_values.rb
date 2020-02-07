@@ -22,10 +22,6 @@ module Capistrano
             link: "/etc/nginx/sites-enabled/{{full_app_name}}"
           },
           {
-            source: "unicorn_init.sh",
-            link: "/etc/init.d/unicorn_{{full_app_name}}"
-          },
-          {
             source: "log_rotation",
            link: "/etc/logrotate.d/{{full_app_name}}"
           },
@@ -48,8 +44,6 @@ module Capistrano
           database.example.yml
           log_rotation
           monit
-          unicorn.rb
-          unicorn_init.sh
           secrets.yml
         )
       end
